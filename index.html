@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Preparação Vocal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .exercicio-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 15px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        .respiracao {
+            height: 200px;
+            background: #e74c3c;
+            margin: 20px auto;
+            width: 200px;
+            border-radius: 50%;
+            animation: respirar 4s infinite;
+        }
+
+        @keyframes respirar {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .dicas {
+            background: #fff9e6;
+            padding: 15px;
+            border-left: 5px solid #f39c12;
+            margin: 10px 0;
+        }
+
+        /* Estilos do Temporizador */
+        .timer-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .time-display {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        input {
+            width: 80px;
+            padding: 5px;
+            text-align: center;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aula de Preparação Vocal</h1>
+    </header>
+    
+    <div class="container">
+        <section id="aquecimento">
+            <h2>Exercícios de Aquecimento</h2>
+            
+            <div class="exercicio-card">
+                <h3>História da Música</h3>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=tL3Vx6KTNJ0" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="exercicio-card">
+                <h3>História de Pitágoras e as notas</h3>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=66l6MBQgcRg" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="exercicio-card">
+                <h3>Classificação vocal</h3>
+                <div class="video-container">
+                    <iframe 
+                        src="https://youtu.be/jyCpce588Iw?si=zeLi8RisvDR9YzKg" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="exercicio-card">
+                <h3>Vozes peculiares</h3>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=mmWifNXh2gM" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="exercicio-card">
+                <h3>Vocalises Guiados</h3>
+                <div class="video-container">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2Dk4bPjNeVsIo8mPM8FJVv?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="respiracao">
+            <h2>Técnicas de Respiração</h2>
+            <div class="respiracao"></div>
+            <p>Inspire profundamente pelo nariz (4s) e expire pela boca (6s)</p>
+        </section>
+
+        <section id="timer">
+            <h2>Temporizador de Prática</h2>
+            <div class="timer-container">
+                <div class="time-display" id="display">00:00</div>
+                
+                <div class="controls">
+                    <input type="number" id="minutes" min="0" placeholder="Minutos">
+                    <input type="number" id="seconds" min="0" max="59" placeholder="Segundos">
+                    <button onclick="startTimer()">Iniciar</button>
+                    <button onclick="pauseTimer()" disabled>Pausar</button>
+                    <button onclick="resetTimer()">Resetar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="dicas">
+            <h2>Dicas Importantes</h2>
+            <div class="dicas">
+                <h3>Hidrate-se</h3>
+                <p>Beba água morna antes e durante os exercícios</p>
+            </div>
+            <div class="dicas">
+                <h3>Postura</h3>
+                <p>Mantenha a coluna ereta e ombros relaxados</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let timeLeft = 0;
+        let timerInterval = null;
+        const display = document.getElementById('display');
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            display.textContent = 
+                `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            const min = parseInt(document.getElementById('minutes').value) || 0;
+            const sec = parseInt(document.getElementById('seconds').value) || 0;
+            
+            timeLeft = min * 60 + sec;
+            
+            if (timeLeft <= 0) {
+                alert('Insira um tempo válido!');
+                return;
+            }
+
+            document.querySelector('#timer button:nth-child(3)').disabled = true;
+            document.querySelector('#timer button:nth-child(4)').disabled = false;
+            document.querySelector('#timer button:nth-child(5)').disabled = false;
+
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    alert('Tempo encerrado!');
+                    resetTimer();
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            clearInterval(timerInterval);
+            document.querySelector('#timer button:nth-child(3)').disabled = false;
+            document.querySelector('#timer button:nth-child(4)').disabled = true;
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timeLeft = 0;
+            updateDisplay();
+            document.querySelectorAll('#timer input').forEach(i => i.value = '');
+            document.querySelector('#timer button:nth-child(3)').disabled = false;
+            document.querySelector('#timer button:nth-child(4)').disabled = true;
+            document.querySelector('#timer button:nth-child(5)').disabled = false;
+        }
+
+        updateDisplay();
+    </script>
+    
+    </head>
+<body>
+    <header>
+        <h1>Aula de Preparação Vocal</h1>
+    </header>
+    
+    <div class="container">
+        <!-- Nova seção com tabela de exercícios -->
+        <section id="tabela-exercicios">
+            <h2>Guia de Exercícios</h2>
+            <table class="tabela-aquecimento">
+                <thead>
+                    <tr>
+                        <th>Exercício</th>
+                        <th>Duração</th>
+                        <th>Descrição</th>
+                        <th>Objetivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Respiração Diafragmática</td>
+                        <td>5-10 min</td>
+                        <td>Inspiração profunda pelo nariz (4s), expiração lenta pela boca (6s)</td>
+                        <td>Controle respiratório</td>
+                    </tr>
+                    <tr>
+                        <td>Vocalização com "Hum"</td>
+                        <td>3-5 min</td>
+                        <td>Emissão de som nasalizado em diferentes alturas</td>
+                        <td>Aquecimento suave das cordas vocais</td>
+                    </tr>
+                    <tr>
+                        <td>Escalas Musicais</td>
+                        <td>5-10 min</td>
+                        <td>Execução de escalas ascendentes e descendentes</td>
+                        <td>Flexibilidade vocal</td>
+                    </tr>
+                    <tr>
+                        <td>Articulação (Vogais)</td>
+                        <td>5 min</td>
+                        <td>Repetição de vogais (A-E-I-O-U) em diferentes intensidades</td>
+                        <td>Precisão articulatória</td>
+                    </tr>
+                    <tr>
+                        <td>Sirenes</td>
+                        <td>3-5 min</td>
+                        <td>Glissandos suaves do grave ao agudo e vice-versa</td>
+                        <td>Expansão de registro</td>
+                    </tr>
+                    <tr>
+                        <td>Resfriamento Vocal</td>
+                        <td>5 min</td>
+                        <td>Emissão de sons suaves em registro médio</td>
+                        <td>Recuperação das cordas vocais</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total recomendado:</td>
+                        <td id="total-time">26-40 min</td>
+                        <td colspan="2">Tempo pode variar conforme nível do aluno</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Demais seções (aquecimento, respiração, timer, dicas) permanecem -->
+    </div>
+
+    <style>
+        /* Novos estilos para a tabela */
+        .tabela-aquecimento {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tabela-aquecimento th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .tabela-aquecimento td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tabela-aquecimento tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .tabela-aquecimento tfoot {
+            background: #f9f9f9;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        // Script para calcular tempo total (adicione ao final do script existente)
+        function calcularTotal() {
+            const tempos = document.querySelectorAll('#tabela-exercicios tbody tr td:nth-child(2)');
+            let minTotal = 0;
+            let maxTotal = 0;
+
+            tempos.forEach(tempo => {
+                const [min, max] = tempo.textContent.replace(' min', '').split('-');
+                minTotal += parseInt(min);
+                maxTotal += parseInt(max || min);
+            });
+
+            document.getElementById('total-time').textContent = `${minTotal}-${maxTotal} min`;
+        }
+
+        // Executar cálculo ao carregar a página
+        document.addEventListener('DOMContentLoaded', calcularTotal);
+    </script>
+</body>
+</html>
